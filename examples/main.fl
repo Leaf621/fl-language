@@ -1,0 +1,67 @@
+# Femboy Language example
+
+adopt io
+
+keep hellow_world = "hellow world"
+
+share keep global_var = 5
+
+keep Human = boy {
+	share keep name = ""
+	keep privateAge = 0
+
+	share keep born = (self, age) => {
+		self.privateAge = age
+	}
+
+	share keep talk = (self) => {
+		io::print("Hi, I am", self.name)
+	}
+}
+
+keep Cutie = boy : Human {
+	share keep born = (self, age) => {
+		daddy(age)
+	}
+
+	share keep talk = (self, age) => {
+		daddy.talk()
+		io::print("...and I am cute!")
+	}
+}
+
+share keep newHuman = (age) => {
+	return makeout Human(age)
+}
+
+share keep main = () => {
+	keep lst = [1, "okak"]
+	go lst by x {
+		io::print(x)
+	}
+	keep i = 0
+	stay i < 5 {
+		i += 1
+	}
+	keep alwaysTrue = YES
+	if alwaysTrue {
+		io::print("true branch")
+	} else if !alwaysTrue {
+		io::print("else if branch")
+	} else {
+		io::print("else branch")
+	}
+	keep range = 0 to 3
+
+	io::print("My bf said:", hellow_world)
+	io::print("Range:", range)
+	io::print("Difficult command:", (() => {
+		return "hello world"
+	})())
+
+	keep h = makeout Cutie(18)
+	h.name = "Alex"
+	h.talk()
+}
+
+main()

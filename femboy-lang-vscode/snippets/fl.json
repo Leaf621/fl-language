@@ -1,0 +1,121 @@
+{
+  "Function": {
+    "prefix": "keep fn",
+    "body": [
+      "keep ${1:name} = (${2:args}) => {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Declare a function"
+  },
+  "Shared Function": {
+    "prefix": "share fn",
+    "body": [
+      "share keep ${1:name} = (${2:args}) => {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Declare a shared (public) function"
+  },
+  "Class": {
+    "prefix": "boy",
+    "body": [
+      "keep ${1:ClassName} = boy {",
+      "\tshare keep born = (self${2:, args}) => {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Declare a class"
+  },
+  "Class with Inheritance": {
+    "prefix": "boy extends",
+    "body": [
+      "keep ${1:ClassName} = boy : ${2:ParentClass} {",
+      "\tshare keep born = (self${3:, args}) => {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Declare a class with inheritance"
+  },
+  "If": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If block"
+  },
+  "If-Else": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition} {",
+      "\t$2",
+      "} else {",
+      "\t$0",
+      "}"
+    ],
+    "description": "If-else block"
+  },
+  "While Loop": {
+    "prefix": "stay",
+    "body": [
+      "stay ${1:condition} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "While (stay) loop"
+  },
+  "For-Each Loop": {
+    "prefix": "go",
+    "body": [
+      "go ${1:iterable} by ${2:item} {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For-each (go...by) loop"
+  },
+  "Import": {
+    "prefix": "adopt",
+    "body": [
+      "adopt ${1:module}"
+    ],
+    "description": "Import a module"
+  },
+  "Variable": {
+    "prefix": "keep",
+    "body": [
+      "keep ${1:name} = ${2:value}"
+    ],
+    "description": "Declare a variable"
+  },
+  "Constructor Call": {
+    "prefix": "makeout",
+    "body": [
+      "makeout ${1:ClassName}(${2:args})"
+    ],
+    "description": "Create a new instance"
+  },
+  "Main Function": {
+    "prefix": "main",
+    "body": [
+      "share keep main = () => {",
+      "\t$0",
+      "}",
+      "",
+      "main()"
+    ],
+    "description": "Entry point main function"
+  },
+  "Native Block": {
+    "prefix": "native",
+    "body": [
+      "native => {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Native JavaScript block"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "femboy-lang",
+  "displayName": "Femboy Language",
+  "description": "Syntax highlighting for the Femboy Language (.fl)",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "femboy-lang",
+        "aliases": [
+          "Femboy Language",
+          "fl"
+        ],
+        "extensions": [
+          ".fl"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "femboy-lang",
+        "scopeName": "source.fl",
+        "path": "./syntaxes/fl.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "femboy-lang",
+        "path": "./snippets/fl.json"
+      }
+    ]
+  }
+}

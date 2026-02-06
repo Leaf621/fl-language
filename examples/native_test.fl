@@ -1,0 +1,27 @@
+# Test native JS interop and varargs
+
+adopt io
+
+keep jsAlert = (message) => {
+	keep result: native
+	native => {
+		// Pure JS code here
+		result = String(message).toUpperCase()
+	}
+	return result
+}
+
+keep varargFn = (first, rest...) => {
+	io::print("First:", first)
+	go rest by item {
+		io::print("Rest item:", item)
+	}
+}
+
+share keep main = () => {
+	keep upper = jsAlert("hello native")
+	io::print("Native result:", upper)
+	varargFn("one", "two", "three", "four")
+}
+
+main()

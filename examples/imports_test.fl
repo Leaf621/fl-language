@@ -1,0 +1,12 @@
+# Test module imports
+
+adopt io
+adopt utils.helper
+
+share keep main = () => {
+	utils::helper::greet("World")
+	keep result = utils::helper::add(2, 3)
+	io::print("2 + 3 =", result)
+}
+
+main()

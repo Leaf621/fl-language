@@ -1,0 +1,11 @@
+# Utils helper module
+
+adopt io
+
+share keep greet = (name) => {
+	io::print("Hello from utils, dear", name)
+}
+
+share keep add = (a, b) => {
+	return a + b
+}
