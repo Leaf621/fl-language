@@ -96,10 +96,14 @@ stay i < 5 {
 
 ### Ranges
 
-Use `to` to build a range.
+Use `to` to build a list of numbers in a range.
 
 ```
-keep range = 0 to 3
+keep range = 0 to 3 # creates [0, 1, 2]
+
+go 0 to 3 by x {
+    io::print(x) # prints 0, 1, 2
+}
 ```
 
 ## Classes and Inheritance
